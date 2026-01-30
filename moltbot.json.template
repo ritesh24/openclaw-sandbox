@@ -2,16 +2,9 @@
   "agents": {
     "defaults": {
       "workspace": "/root/clawd",
-      "model": {
-        "primary": "zai/glm-4.7"
-      },
-      "models": {
-        "zai/glm-4.7": {}
-      }
+      "model": { "primary": "zai/glm-4.7" },
+      "models": { "zai/glm-4.7": {} }
     }
   },
-  "gateway": {
-    "port": 18789,
-    "mode": "local"
-  }
+  "gateway": { "port": 18789, "mode": "local" }
 }
