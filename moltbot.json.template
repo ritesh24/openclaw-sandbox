@@ -1,11 +1,38 @@
 {
   "agents": {
     "defaults": {
-      "workspace": "/root/clawd"
+      "workspace": "/root/clawd",
+      "model": {
+        "primary": "zai-custom/GLM-4.7"
+      },
+      "models": {
+        "zai-custom/GLM-4.7": { "alias": "glm" }
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "zai-custom": {
+        "baseUrl": "${ZAI_BASE_URL}",
+        "apiKey": "${ZAI_API_KEY}",
+        "api": "openai-completions",
+        "authHeader": true,
+        "models": [
+          {
+            "id": "GLM-4.7",
+            "name": "GLM-4.7"
+          }
+        ]
+      }
     }
   },
   "gateway": {
     "port": 18789,
-    "mode": "local"
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "${MOLTBOT_GATEWAY_TOKEN}"
+    }
   }
 }
